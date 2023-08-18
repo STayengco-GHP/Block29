@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function PlayerCard({ puppy, setSelectedPuppyId }) {
+export default function PlayerCard({ puppy }) {
   const navigate = useNavigate();
   console.log("Player Card has ", {puppy})
 
@@ -11,9 +11,6 @@ export default function PlayerCard({ puppy, setSelectedPuppyId }) {
         <p>{puppy.id}</p>
         <img src={puppy.imageUrl} alt="" style={{width:100}}  /> 
         <br />
-        {/* <button onClick={() => {
-                setSelectedPuppyId(puppy.id)
-            }}>I'm a button</button> */}
         <button onClick={() => navigate(`/SinglePlayer/${puppy.id}`)}>Button</button>
       </div>
     </div>
