@@ -34,7 +34,7 @@ export default function SinglePlayer() {
       navigate('/')
     } catch (err) {
       console.error(
-        `Whoops, trouble removing player #${playerId} from the roster!`,
+        `Whoops, trouble removing player #${puppyId} from the roster!`,
         err
       );
     }
