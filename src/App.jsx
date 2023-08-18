@@ -12,8 +12,8 @@ function App() {
       <div id="container">
         <NavBar/>
           <Routes>
-            <Route path="/" element={<AllPlayers />} />
-            <Route path="/SinglePlayer" element={<SinglePlayer />} />
+            <Route path="/" element={<AllPlayers />}/>
+            <Route path="/SinglePlayer/:puppyId" element={<SinglePlayer />} />
             <Route path="/NewPlayerForm" element={<NewPlayerForm />} />
             <Route path="/Search" element={<Search />} />
           </Routes>
