@@ -9,7 +9,9 @@ function App() {
   return (
     <>
       <div id="container">
+        <div className="nav">
         <NavBar/>
+        </div>
           <Routes>
             {/* <Route path="/" element={<AllPlayers />}/> */}
             <Route path="/" element={<FilterablePlayers />}/>

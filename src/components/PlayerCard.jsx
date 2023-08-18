@@ -5,12 +5,13 @@ export default function PlayerCard({ puppy }) {
 
   return (
     <div>
-      <div>
+      <div className="playerCard" >
         <h1>{puppy.name}</h1>
-        <p>{puppy.id}</p>
+        <p>Breed: {puppy.breed}</p>
+        <p>Puppy ID: {puppy.id}</p>
         <img src={puppy.imageUrl} alt="" style={{width:100}}  /> 
         <br />
-        <button onClick={() => navigate(`/SinglePlayer/${puppy.id}`)}>See Details</button>
+        <button className="cardButtons" onClick={() => navigate(`/SinglePlayer/${puppy.id}`)}>See Details</button>
       </div>
     </div>
   );

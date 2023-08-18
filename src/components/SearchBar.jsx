@@ -1,7 +1,7 @@
 export default function SearchBar({ filterText, onFilterTextChange }) {
   return (
-    <div>
-      <h2>Search Bar</h2>
+    <div className="searchBar">
+
       <form>
         <input
           type="text"
@@ -13,5 +13,3 @@ export default function SearchBar({ filterText, onFilterTextChange }) {
     </div>
   );
 }
-
-// goes in AllPlayers

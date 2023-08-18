@@ -7,8 +7,10 @@ export default function FilterablePlayers () {
 
     return (
         <div>
+            <div className="searchLayout">
             <SearchBar filterText={filterText} onFilterTextChange={setFilterText} />
             <button onClick={() => setFilterText('')} >Reset Search</button>
+            </div>
             <AllPlayers filterText={filterText} />
         </div>
     )

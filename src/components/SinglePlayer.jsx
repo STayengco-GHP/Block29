@@ -53,13 +53,12 @@ export default function SinglePlayer() {
   }, [thisPup]);
 
   return (
-    <div>
-      <p>Single Player</p>
-      <p>{onePup.name}</p>
-      <p>{onePup.breed}</p>
-      <p>{onePup.status}</p>
-      <p>{onePup.team?.name}</p>
-      <img src={onePup.imageUrl} alt="" style={{width:100}} /><br/> 
+    <div className="singlePlayer">
+      <h1>{onePup.name}</h1>
+      <p>Breed: {onePup.breed}</p>
+      <p>Player Status: {onePup.status}</p>
+      <p>Team: {onePup.team?.name}</p>
+      <img src={onePup.imageUrl} alt={onePup.name} /><br/> 
       <button onClick={handleClick}>Delete</button>
     </div>
   );

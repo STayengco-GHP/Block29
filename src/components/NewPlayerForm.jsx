@@ -73,25 +73,24 @@ export default function NewPlayerForm() {
     }
 
     return (
-        <div>
+        <div className="newPuppyForm" >
             <form onSubmit={handleSubmit}>
-            <p>New Player Form</p>
-                <label>Name:{''} <input value={formName} onChange={(e)=>{ setName(e.target.value)}}/></label><br/>
-                <label>Breed:{''} <input value={formBreed} onChange={(e)=>{ setBreed(e.target.value)}}/></label><br/>
-                <label>ImageUrl:{''} <input value={formImageUrl} onChange={(e)=>{ setImageUrl(e.target.value)}}/></label><br/>
-                <hr/>
-                <label>Team
+            <h2>Add a New Puppy Bowl Player Here</h2>
+                <label>Name:{''} <input className="formInput" value={formName} onChange={(e)=>{ setName(e.target.value)}}/></label><br/>
+                <label>Breed:{''} <input className="formInput" value={formBreed} onChange={(e)=>{ setBreed(e.target.value)}}/></label><br/>
+                <label>Image URL:{''} <input className="formInput" value={formImageUrl} onChange={(e)=>{ setImageUrl(e.target.value)}}/></label><br/>
+                <div className="pickLists">
+                <label >Team
                 <select value={formTeam} onChange={(e)=>{ setTeam(e.target.value)}}>
                     {teamOptions.map((team)=>(<option value={team.value}>{team.label}</option>))}
                     </select>
                 </label>
-                <hr/>
                 <label>Status
                 <select value={formStatus} onChange={(e)=>{ setStatus(e.target.value)}}>
                     {statusOptions.map((status)=>(<option value={status.value}>{status.label}</option>))}
                     </select>
                 </label>
-                <hr/>
+                </div>
                 <button type="reset" onClick={resetForm}>Reset</button>
                 <button type="submit">Submit</button>
                 <button onClick={handleReturn}>Return to All</button>

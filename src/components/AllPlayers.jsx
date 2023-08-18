@@ -25,5 +25,5 @@ export default function AllPlayers({ filterText }) {
     cards.push(<PlayerCard key={puppy.id} puppy={puppy} />);
   });
 
-  return <div>{cards}</div>;
+  return <div className="cardDisplay" >{cards}</div>;
 }
