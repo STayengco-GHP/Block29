@@ -9,7 +9,6 @@ export default function AllPlayers() {
     async function fetchAll() {
       try {
         const response = await fetchAllPlayers();
-        console.log("in AP useEffect", response);
         setPlayers(response);
       } catch (error) {
         console.error(error);

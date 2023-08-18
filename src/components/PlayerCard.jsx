@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function PlayerCard({ puppy }) {
   const navigate = useNavigate();
-  console.log("Player Card has ", {puppy})
 
   return (
     <div>
