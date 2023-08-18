@@ -11,7 +11,6 @@ export default function SinglePlayer() {
   function handleClick(e) {
   e.preventDefault()
   removePlayer(puppyId)
-  navigate('/')
   }
 
   const removePlayer = async (puppyId) => {
@@ -32,6 +31,7 @@ export default function SinglePlayer() {
       console.log("in removePlayer");
       console.log(removePuppyStatus);
       console.log(removePuppyData);
+      navigate('/')
     } catch (err) {
       console.error(
         `Whoops, trouble removing player #${playerId} from the roster!`,
