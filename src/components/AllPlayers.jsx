@@ -25,13 +25,5 @@ export default function AllPlayers({ filterText }) {
     cards.push(<PlayerCard key={puppy.id} puppy={puppy} />);
   });
 
-  // return (
-  //     <div>
-  //       {players.map((puppy) => {
-  //         return <PlayerCard key={puppy.id} puppy={puppy} />;
-  //       })}
-  //     </div>
-  // );
-
   return <div>{cards}</div>;
 }
