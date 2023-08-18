@@ -12,4 +12,15 @@ const fetchAllPlayers = async () => {
   }
 };
 
-export default fetchAllPlayers
+const fetchSinglePlayer = async(puppyId) => {
+  try {
+    const response = await fetch (`${API_URL}/players/${puppyId}`)
+    const result = await response.json()
+    const pupInfo = result.data.player
+    return pupInfo
+  } catch (err) {
+    console.error(`Oh no, trouble fetching player #${puppyId}!`, err);
+  }
+}
+
+export { fetchAllPlayers, fetchSinglePlayer }

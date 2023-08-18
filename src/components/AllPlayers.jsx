@@ -1,4 +1,4 @@
-import fetchAllPlayers from "../API/ajaxHelpers";
+import { fetchAllPlayers } from "../API/ajaxHelpers";
 import { useState, useEffect } from "react";
 import PlayerCard from "./PlayerCard";
 
@@ -21,12 +21,7 @@ export default function AllPlayers() {
   return (
     <div>
       {players.map((puppy) => {
-        return (
-          <PlayerCard
-            key={puppy.id}
-            puppy={puppy}
-          />
-        );
+        return <PlayerCard key={puppy.id} puppy={puppy} />;
       })}
     </div>
   );

@@ -1,28 +1,23 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { fetchSinglePlayer } from "../API/ajaxHelpers";
 
 export default function SinglePlayer() {
   const { puppyId } = useParams();
-  console.log("SinglePlayer has ", puppyId);
+  const thisPup = puppyId
   const [onePup, setPup] = useState([]);
 
-  const cohortName = "2306-GHP-ET-WEB-FT-SF";
-  const API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}`;
-
   useEffect(() => {
-    const fetchSinglePlayer = async (puppyId) => {
+    async function fetchSingle() {
       try {
-        console.log(`${API_URL}/players/${puppyId}`)
-        const response = await fetch(`${API_URL}/players/${puppyId}`)
-        const result = await response.json()
-        setPup(result.data.player)
-      } catch (err) {
-        console.error(`Oh no, trouble fetching player #${playerId}!`, err);
+        const response = await fetchSinglePlayer(thisPup);
+        setPup(response);
+      } catch (error) {
+        console.error(error);
       }
-    };
-    fetchSinglePlayer(puppyId)
-
-  }, []);
+    }
+    fetchSingle();
+  }, [thisPup]);
 
   return (
     <div>
