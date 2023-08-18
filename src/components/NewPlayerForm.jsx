@@ -10,14 +10,14 @@ export default function NewPlayerForm() {
     const [ formBreed, setBreed] = useState('')
     const [ formImageUrl, setImageUrl] = useState('')
     const [ formStatus, setStatus] = useState('bench')
-    const [ formTeam, setTeam] = useState('Unassigned')
+    const [ formTeam, setTeam] = useState(51)
 
     const navigate=useNavigate()
 
     const teamOptions = [
         {label:'Ruff', value: "51"},
         {label:'Fluff', value: "52"},
-        {label:'Unassigned', value: "Unassigned"}
+        // {label:'Unassigned', value: null}
     ]
 
     const statusOptions = [
@@ -29,8 +29,8 @@ export default function NewPlayerForm() {
         setName('')
         setBreed('')
         setImageUrl('')
-        setStatus('')
-        setTeam('')
+        setStatus('bench')
+        setTeam(51)
     }
 
     function handleSubmit(e) {
@@ -42,6 +42,7 @@ export default function NewPlayerForm() {
             status: formStatus,
             teamId: formTeam,
           }
+          console.log(puppyObj)
         postPuppy(puppyObj)
         resetForm()
     }
@@ -63,6 +64,7 @@ export default function NewPlayerForm() {
         
         const postResponse = await response.json()
         console.log(postResponse.success)
+        console.log(postResponse.error)
         console.log(postResponse.data)
 
         } catch (err) {
@@ -80,13 +82,13 @@ export default function NewPlayerForm() {
                 <hr/>
                 <label>Team
                 <select value={formTeam} onChange={(e)=>{ setTeam(e.target.value)}}>
-                    {teamOptions.map((option)=>(<option value={option.value}>{option.label}</option>))}
+                    {teamOptions.map((team)=>(<option value={team.value}>{team.label}</option>))}
                     </select>
                 </label>
                 <hr/>
                 <label>Status
                 <select value={formStatus} onChange={(e)=>{ setStatus(e.target.value)}}>
-                    {statusOptions.map((option)=>(<option value={option.value}>{option.label}</option>))}
+                    {statusOptions.map((status)=>(<option value={status.value}>{status.label}</option>))}
                     </select>
                 </label>
                 <hr/>
