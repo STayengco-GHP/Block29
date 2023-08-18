@@ -6,7 +6,6 @@ export default function NavBar () {
         <nav>
             <Link to="/">All</Link>
             <Link to="/NewPlayerForm">Create</Link>
-            <Link to="/Search">Search</Link>
         </nav>
     )
 }

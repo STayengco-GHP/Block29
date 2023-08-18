@@ -10,7 +10,7 @@ export default function PlayerCard({ puppy }) {
         <p>{puppy.id}</p>
         <img src={puppy.imageUrl} alt="" style={{width:100}}  /> 
         <br />
-        <button onClick={() => navigate(`/SinglePlayer/${puppy.id}`)}>Button</button>
+        <button onClick={() => navigate(`/SinglePlayer/${puppy.id}`)}>See Details</button>
       </div>
     </div>
   );

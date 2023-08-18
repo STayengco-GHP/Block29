@@ -2,8 +2,9 @@ import { fetchAllPlayers } from "../API/ajaxHelpers";
 import { useState, useEffect } from "react";
 import PlayerCard from "./PlayerCard";
 
-export default function AllPlayers() {
+export default function AllPlayers({ filterText }) {
   const [players, setPlayers] = useState([]);
+  const cards = [];
 
   useEffect(() => {
     async function fetchAll() {
@@ -17,11 +18,20 @@ export default function AllPlayers() {
     fetchAll();
   }, []);
 
-  return (
-    <div>
-      {players.map((puppy) => {
-        return <PlayerCard key={puppy.id} puppy={puppy} />;
-      })}
-    </div>
-  );
+  players.forEach((puppy) => {
+    if (puppy.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
+      return;
+    }
+    cards.push(<PlayerCard key={puppy.id} puppy={puppy} />);
+  });
+
+  // return (
+  //     <div>
+  //       {players.map((puppy) => {
+  //         return <PlayerCard key={puppy.id} puppy={puppy} />;
+  //       })}
+  //     </div>
+  // );
+
+  return <div>{cards}</div>;
 }
